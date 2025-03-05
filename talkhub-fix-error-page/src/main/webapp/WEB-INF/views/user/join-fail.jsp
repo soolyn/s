@@ -19,7 +19,7 @@
         <label>비밀번호</label>
     <div>
         <input type="password" name="password">
-    </div>${passError}
+    </div>
     </p>
     <p style="color: red; font-size: small">${passError}</p>
     <p>
