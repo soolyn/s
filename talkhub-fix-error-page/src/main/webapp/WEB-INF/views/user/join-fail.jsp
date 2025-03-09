@@ -2,11 +2,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>TolkHub</title>
+    <title>TalkHub</title>
 </head>
 <body>
 <h1><a href="${pageContext.request.contextPath}/index">TalkHub</a></h1>
-<h3>토크허브에 회원가입하기</h3>
+<h2>토크허브에 회원가입하기</h2>
 <form action="${pageContext.request.contextPath}/join-proceed"method="post">
     <p>
         <label>아이디</label>
@@ -19,7 +19,7 @@
         <label>비밀번호</label>
     <div>
         <input type="password" name="password">
-    </div>
+    </div>${passError}
     </p>
     <p style="color: red; font-size: small">${passError}</p>
     <p>

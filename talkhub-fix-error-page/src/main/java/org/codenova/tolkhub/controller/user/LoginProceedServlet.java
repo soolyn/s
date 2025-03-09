@@ -27,7 +27,14 @@ public class LoginProceedServlet extends HttpServlet {
 
                 HttpSession session = req.getSession();
                 session.setAttribute("user", user);
-                resp.sendRedirect(req.getContextPath() + "/index");
+
+                if(session.getAttribute("callback") == null) {
+                    resp.sendRedirect(req.getContextPath() + "/index");
+                }else{
+                    String callback = (String) session.getAttribute("callback");
+                    session.removeAttribute("callback");
+                    resp.sendRedirect(callback);
+                }
             }else{
                 req.setAttribute("id", id);
                 req.getRequestDispatcher("WEB-INF/views/user/login-fail.jsp").forward(req,resp);
